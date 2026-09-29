@@ -11,7 +11,7 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📱</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = { theme: { extend: {
@@ -21,9 +21,43 @@
   </script>
   <style>
     :focus-visible { outline: 3px solid #0553B1; outline-offset: 2px; }
-    .phone { width: 160px; height: 320px; border-radius: 30px; border: 6px solid #12243A; overflow: hidden; display: flex; flex-direction: column; justify-content: center; gap: 10px; padding: 0 16px; box-shadow: 0 12px 30px rgba(18,36,58,.18); }
-    .phone i { display: block; }
-    @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+    @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+
+    /* ---------- Dispositivo de vista previa funcional ---------- */
+    .device { position: relative; width: 220px; height: 420px; border: 6px solid #12243A; overflow: hidden;
+      box-shadow: 0 14px 34px rgba(18,36,58,.2); background: var(--bg); border-radius: var(--r, 16px); }
+    .device[data-shape="chamfer"] { border-radius: 0; clip-path: polygon(22px 0, 100% 0, 100% calc(100% - 22px), calc(100% - 22px) 100%, 0 100%, 0 22px); }
+    .device-bg { position: absolute; inset: 0; z-index: 0; }
+    .device[data-anim="gradient"] .device-bg { background: linear-gradient(120deg,#590995,#8B008B,#D80064,#FF4E50); background-size: 300% 300%; animation: driftGradient 6s ease-in-out infinite; }
+    @keyframes driftGradient { 0%,100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+    .device[data-anim="grid"] .device-bg { background-image: linear-gradient(rgba(0,240,255,.10) 1px, transparent 1px), linear-gradient(90deg, rgba(0,240,255,.10) 1px, transparent 1px); background-size: 16px 16px; }
+    .device-form { position: relative; z-index: 1; height: 100%; display: flex; flex-direction: column; justify-content: center; gap: 8px; padding: 0 16px; font-family: var(--font, 'DM Sans', sans-serif); }
+    .device[data-font="mono"] .device-form { font-family: 'JetBrains Mono', monospace; letter-spacing: .04em; }
+    .device-avatar { width: 36px; height: 36px; border-radius: 50%; background: var(--field); display: flex; align-items: center; justify-content: center; font-size: 16px; margin: 0 auto 4px; }
+    .device[data-shape="chamfer"] .device-avatar { border-radius: 0; clip-path: polygon(6px 0,100% 0,100% calc(100% - 6px),calc(100% - 6px) 100%,0 100%,0 6px); }
+    .device-title { color: var(--text); font-weight: 800; font-size: 15px; text-align: center; line-height: 1.15; }
+    .device-sub { color: var(--text); opacity: .65; font-size: 9.5px; text-align: center; margin-bottom: 6px; }
+    .device-input { width: 100%; box-sizing: border-box; background: var(--field); color: var(--text); border: 1px solid transparent;
+      border-radius: calc(var(--r, 16px) * .55); padding: 8px 10px; font-size: 11px; font-family: inherit; }
+    .device[data-shape="chamfer"] .device-input { border-radius: 0; border-left: 2px solid var(--accent); background: var(--field); }
+    .device-input::placeholder { color: var(--text); opacity: .45; }
+    .device-input:focus { border-color: var(--accent); outline: none; }
+    .device-pass-wrap { position: relative; }
+    .device-pass-wrap .device-input { padding-right: 30px; }
+    .device-eye { position: absolute; right: 6px; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer; font-size: 13px; line-height: 1; padding: 2px; }
+    .device-error { color: #FF6B6B; font-size: 9px; min-height: 11px; text-align: center; }
+    .device-btn { position: relative; border: none; cursor: pointer; padding: 9px 0; border-radius: calc(var(--r, 16px) * .6);
+      background: var(--accent); color: var(--btnText); font-weight: 700; font-size: 11.5px; letter-spacing: .03em;
+      display: flex; align-items: center; justify-content: center; gap: 6px; margin-top: 4px; }
+    .device[data-shape="chamfer"] .device-btn { border-radius: 0; clip-path: polygon(6px 0,100% 0,100% calc(100% - 6px),calc(100% - 6px) 100%,0 100%,0 6px); }
+    .device-btn:disabled { cursor: default; opacity: .85; }
+    .device-spinner { width: 13px; height: 13px; border: 2px solid currentColor; border-top-color: transparent; border-radius: 50%; animation: spin .7s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .device-link { text-align: center; font-size: 9.5px; color: var(--text); opacity: .7; margin-top: 2px; background: none; border: none; cursor: pointer; font-family: inherit; }
+    .device.shake { animation: shake .35s; }
+    @keyframes shake { 20%,60% { transform: translateX(-4px); } 40%,80% { transform: translateX(4px); } }
+    .device-blip { position: absolute; top: 10px; right: 12px; z-index: 2; width: 6px; height: 6px; border-radius: 50%; background: #FF0055; animation: blip 1.6s steps(1) infinite; }
+    @keyframes blip { 50% { opacity: 0; } }
   </style>
 </head>
 <body class="bg-paper text-ink font-sans antialiased">
@@ -49,15 +83,15 @@
     </div>
     <div class="bg-white rounded-3xl p-6 border border-ink/10">
       <div id="tabs" class="flex flex-wrap gap-2 mb-6" role="group" aria-label="Elegir estilo de vista previa"></div>
-      <div class="flex justify-center py-4" style="min-height:470px"><div id="hero-phone" style="zoom:1.35"></div></div>
-      <p id="hero-caption" class="text-center text-sm text-ink/70 mt-2"></p>
+      <div class="flex justify-center py-2"><div id="hero-device" style="zoom:1.2"></div></div>
+      <p class="text-center text-xs text-ink/50 mt-2">Prueba escribir un correo, mostrar la contraseña y pulsar el botón.</p>
     </div>
   </section>
 
   <!-- CATÁLOGO -->
   <main id="catalogo" class="max-w-6xl mx-auto px-5 pb-20">
     <h2 class="font-display font-extrabold text-3xl sm:text-4xl">Elige tu estilo de login</h2>
-    <p class="mt-3 text-ink/80 max-w-xl">Cada kit se vende por separado. Las vistas previas son ilustrativas; agrega tus capturas reales en el campo <code>imagen</code>.</p>
+    <p class="mt-3 text-ink/80 max-w-xl">Cada kit se vende por separado. Prueba cada vista previa: son interactivas, igual que la pantalla real.</p>
     <div id="grid" class="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3"></div>
   </main>
 
@@ -68,7 +102,7 @@
       <div class="mt-10 grid sm:grid-cols-2 gap-x-12 gap-y-8 max-w-4xl">
         <div class="border-l-4 border-sky pl-5"><h3 class="font-bold text-lg">El archivo Dart de la pantalla</h3><p class="mt-1 text-white/75">La interfaz completa del login, lista para copiar a la carpeta <code>lib/</code> de tu proyecto.</p></div>
         <div class="border-l-4 border-sky pl-5"><h3 class="font-bold text-lg">Solo la interfaz</h3><p class="mt-1 text-white/75">No incluye servidor ni autenticación real. Tú decides si usas Firebase, tu API u otra opción.</p></div>
-        <div class="border-l-4 border-sky pl-5"><h3 class="font-bold text-lg">Fácil de personalizar</h3><p class="mt-1 text-white/75">Cambia colores, textos y logotipo directamente en el código.</p></div>
+        <div class="border-l-4 border-sky pl-5"><h3 class="font-bold text-lg">Textos y color configurables</h3><p class="mt-1 text-white/75">Cambia colores, textos y logotipo pasando parámetros al widget, sin tocar el código interno.</p></div>
         <div class="border-l-4 border-sky pl-5"><h3 class="font-bold text-lg">Entrega tras el pago</h3><p class="mt-1 text-white/75">Recibes el archivo por el medio que configures en tu enlace de pago.</p></div>
       </div>
     </div>
@@ -78,6 +112,7 @@
   <section id="faq" class="max-w-3xl mx-auto px-5 py-20">
     <h2 class="font-display font-extrabold text-3xl sm:text-4xl">Preguntas frecuentes</h2>
     <div class="mt-8 divide-y divide-ink/15 border-y border-ink/15">
+      <details class="py-4"><summary class="cursor-pointer font-bold">¿La vista previa es la app real?</summary><p class="mt-2 text-ink/80">Es una recreación fiel en la página, para que pruebes cómo se ve y se siente. El archivo que recibes es el código Dart original de la pantalla.</p></details>
       <details class="py-4"><summary class="cursor-pointer font-bold">¿Incluye el login funcionando?</summary><p class="mt-2 text-ink/80">No. Es únicamente la interfaz. Conectas los botones con tu propia lógica de inicio de sesión.</p></details>
       <details class="py-4"><summary class="cursor-pointer font-bold">¿Cómo lo agrego a mi app?</summary><p class="mt-2 text-ink/80">Copia el archivo a la carpeta <code>lib/</code> de tu proyecto, impórtalo y muestra la pantalla donde la necesites.</p></details>
       <!-- EDITA: define aquí tu licencia real -->
@@ -92,40 +127,102 @@
 
   <script>
     // ============ EDITA AQUÍ TUS PRODUCTOS ============
-    // imagen: ruta de tu captura (ej. "img/login-minimal.png"); si está vacía se dibuja una vista previa.
-    // comprar: enlace de pago (Gumroad, Mercado Pago, Stripe...). Vacío = botón "Próximamente".
+    // imagen: ruta de tu captura real (ej. "img/login-pastel.png"); si está vacía se usa la vista previa interactiva.
+    // comprar: enlace de pago. Vacío = botón "Próximamente".
     // demo: enlace a una demo o video. Vacío = el botón no aparece.
-    // tema: colores de la vista previa ilustrativa.
+    // tema: colores y comportamiento de la vista previa interactiva.
     const productos = [
-      { titulo: "Minimal", descripcion: "Fondo blanco, campos suaves y un solo color de acento. Sirve para casi cualquier app.",
-        tags: ["Flutter", "Dart", "Claro"], precio: "$5 USD", imagen: "", comprar: "", demo: "",
-        tema: { bg: "#FFFFFF", field: "#E9EEF5", accent: "#0553B1", text: "#12243A", btnText: "#FFFFFF", r: 10 } },
-      { titulo: "Glass", descripcion: "Degradado de fondo con campos translúcidos. Se ve moderno en apps de estilo o bienestar.",
-        tags: ["Flutter", "Dart", "Degradado"], precio: "$5 USD", imagen: "", comprar: "", demo: "",
-        tema: { bg: "linear-gradient(160deg,#6A5CFF,#22C1C3)", field: "rgba(255,255,255,.28)", accent: "#FFFFFF", text: "#FFFFFF", btnText: "#3B3A9E", r: 16 } },
-      { titulo: "Neon", descripcion: "Modo oscuro con acentos brillantes. Pensado para juegos, música y apps nocturnas.",
-        tags: ["Flutter", "Dart", "Oscuro"], precio: "$5 USD", imagen: "", comprar: "", demo: "",
-        tema: { bg: "#0E1224", field: "#1C2245", accent: "#FF3DA5", text: "#FFFFFF", btnText: "#FFFFFF", r: 8 } }
+      { titulo: "Pastel", descripcion: "Fondo blanco, campos suaves y acento lavanda. Incluye validación de correo y mostrar/ocultar contraseña.",
+        tags: ["Flutter", "Dart", "Claro", "Sin paquetes externos"], precio: "$5 USD", imagen: "", comprar: "", demo: "",
+        tema: { bg: "#F8F9FA", field: "#EAEDF3", accent: "#B8C0FF", text: "#4A4E69", btnText: "#4A4E69", r: 16,
+          titulo: "Bienvenido", subtitulo: "Ingresa a tu cuenta", emailHint: "Correo electrónico", passHint: "Contraseña", boton: "Entrar" } },
+      { titulo: "Corporativo", descripcion: "Tarjeta blanca con azul marino y etiquetas sobre los campos. Pensado para portales de empresa.",
+        tags: ["Flutter", "Dart", "Claro", "Material 3", "Sin paquetes externos"], precio: "$5 USD", imagen: "", comprar: "", demo: "",
+        tema: { bg: "#FFFFFF", field: "#EAEFF5", accent: "#1E3A8A", text: "#0F172A", btnText: "#FFFFFF", r: 8,
+          titulo: "Iniciar sesión", subtitulo: "Acceso corporativo", emailHint: "nombre@empresa.com", passHint: "Contraseña", boton: "Acceder" } },
+      { titulo: "Vibrante", descripcion: "Fondo con degradado animado y tarjeta translúcida. El botón se convierte en indicador de carga al enviar.",
+        tags: ["Flutter", "Dart", "Animado", "Sin paquetes externos"], precio: "$5 USD", imagen: "", comprar: "", demo: "",
+        tema: { bg: "#590995", field: "rgba(255,255,255,.22)", accent: "#FF007F", text: "#FFFFFF", btnText: "#FFFFFF", r: 14, anim: "gradient",
+          titulo: "¡Bienvenido!", subtitulo: "Inicia sesión para continuar", emailHint: "Correo electrónico", passHint: "Contraseña", boton: "INGRESAR" } },
+      { titulo: "Cyberpunk", descripcion: "Modo oscuro con neón y esquinas cortadas. Los textos de la pantalla están en inglés, como parte del estilo.",
+        tags: ["Flutter", "Dart", "Oscuro", "Animado", "Sin paquetes externos"], precio: "$5 USD", imagen: "", comprar: "", demo: "",
+        tema: { bg: "#05050A", field: "#141428", accent: "#FF0055", text: "#00F0FF", btnText: "#000000", r: 2, anim: "grid", shape: "chamfer", font: "mono",
+          titulo: "NIGHT_CITY", subtitulo: "NEURAL NETWORK GATEWAY", emailHint: "NETRUNNER_NAME", passHint: "••••••••••••", boton: "INITIALIZE" } }
     ];
     // ===================================================
 
     const esc = s => String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 
-    const phone = t => `
-      <div class="phone" style="background:${t.bg}" aria-hidden="true">
-        <i style="width:42px;height:42px;border-radius:50%;background:${t.accent};margin:0 auto 6px"></i>
-        <i style="height:8px;width:60%;background:${t.text};opacity:.85;border-radius:4px;margin:0 auto 8px"></i>
-        <i style="height:32px;background:${t.field};border-radius:${t.r}px"></i>
-        <i style="height:32px;background:${t.field};border-radius:${t.r}px"></i>
-        <i style="height:34px;background:${t.accent};border-radius:${t.r}px;color:${t.btnText};font:700 12px 'DM Sans',sans-serif;display:flex;align-items:center;justify-content:center">Entrar</i>
-        <i style="height:6px;width:50%;background:${t.text};opacity:.5;border-radius:3px;margin:4px auto 0"></i>
-      </div>`;
+    // ---- Vista previa funcional (misma plantilla, distinta piel por tema) ----
+    function deviceHTML(t) {
+      const style = [
+        `--bg:${t.bg}`, `--field:${t.field}`, `--accent:${t.accent}`,
+        `--text:${t.text}`, `--btnText:${t.btnText}`, `--r:${t.r}px`
+      ].join(";");
+      return `
+        <div class="device" style="${style}" data-anim="${t.anim || ''}" data-shape="${t.shape || ''}" data-font="${t.font || ''}">
+          ${t.anim ? '<div class="device-bg" aria-hidden="true"></div>' : ''}
+          ${t.anim === 'grid' ? '<div class="device-blip" aria-hidden="true"></div>' : ''}
+          <form class="device-form" data-role="form" novalidate>
+            <div class="device-avatar" aria-hidden="true">🔒</div>
+            <div class="device-title">${esc(t.titulo)}</div>
+            <div class="device-sub">${esc(t.subtitulo)}</div>
+            <input class="device-input" type="email" placeholder="${esc(t.emailHint)}" data-role="email">
+            <div class="device-pass-wrap">
+              <input class="device-input" type="password" placeholder="${esc(t.passHint)}" data-role="pass">
+              <button type="button" class="device-eye" data-role="eye" aria-label="Mostrar contraseña">👁</button>
+            </div>
+            <div class="device-error" data-role="error" aria-live="polite"></div>
+            <button type="submit" class="device-btn" data-role="submit">
+              <span data-role="btn-text">${esc(t.boton)}</span>
+            </button>
+            <button type="button" class="device-link" tabindex="-1">¿Olvidaste tu contraseña?</button>
+          </form>
+        </div>`;
+    }
+
+    function wireDevice(root) {
+      const device = root.querySelector(".device");
+      const form = device.querySelector('[data-role="form"]');
+      const email = device.querySelector('[data-role="email"]');
+      const pass = device.querySelector('[data-role="pass"]');
+      const eye = device.querySelector('[data-role="eye"]');
+      const error = device.querySelector('[data-role="error"]');
+      const btn = device.querySelector('[data-role="submit"]');
+      const btnText = device.querySelector('[data-role="btn-text"]');
+      const original = btnText.textContent;
+
+      eye.addEventListener("click", () => {
+        const show = pass.type === "password";
+        pass.type = show ? "text" : "password";
+        eye.textContent = show ? "🙈" : "👁";
+        eye.setAttribute("aria-label", show ? "Ocultar contraseña" : "Mostrar contraseña");
+      });
+
+      form.addEventListener("submit", e => {
+        e.preventDefault();
+        const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim());
+        if (!emailOk || !pass.value) {
+          error.textContent = !emailOk ? "Correo no válido" : "Falta la contraseña";
+          device.classList.remove("shake"); void device.offsetWidth; device.classList.add("shake");
+          return;
+        }
+        error.textContent = "";
+        btn.disabled = true;
+        btnText.innerHTML = '<span class="device-spinner" aria-hidden="true"></span>';
+        setTimeout(() => {
+          btnText.textContent = "¡Listo! ✓";
+          setTimeout(() => { btnText.textContent = original; btn.disabled = false; }, 1100);
+        }, 850);
+      });
+    }
 
     // Catálogo
-    document.getElementById("grid").innerHTML = productos.map(p => `
+    const grid = document.getElementById("grid");
+    grid.innerHTML = productos.map(p => `
       <article class="bg-white rounded-3xl border border-ink/10 overflow-hidden flex flex-col">
-        <div class="bg-[#DFE8F3] py-8 flex justify-center">
-          ${p.imagen ? `<img src="${esc(p.imagen)}" alt="Captura del login ${esc(p.titulo)}" loading="lazy" class="h-80 w-auto rounded-3xl shadow-lg">` : phone(p.tema)}
+        <div class="bg-[#DFE8F3] py-6 flex justify-center">
+          ${p.imagen ? `<img src="${esc(p.imagen)}" alt="Captura del login ${esc(p.titulo)}" loading="lazy" class="h-80 w-auto rounded-3xl shadow-lg">` : `<div style="zoom:.85">${deviceHTML(p.tema)}</div>`}
         </div>
         <div class="p-6 flex flex-col flex-1">
           <div class="flex items-baseline justify-between gap-3">
@@ -142,12 +239,13 @@
           </div>
         </div>
       </article>`).join("");
+    grid.querySelectorAll(".device").forEach(d => wireDevice(d.parentElement));
 
-    // Hero: pestañas que cambian la vista previa
-    const tabs = document.getElementById("tabs"), heroPhone = document.getElementById("hero-phone"), cap = document.getElementById("hero-caption");
+    // Hero: pestañas que cambian la vista previa funcional
+    const tabs = document.getElementById("tabs"), heroSlot = document.getElementById("hero-device");
     function elegir(i) {
-      heroPhone.innerHTML = phone(productos[i].tema);
-      cap.textContent = productos[i].descripcion;
+      heroSlot.innerHTML = deviceHTML(productos[i].tema);
+      wireDevice(heroSlot);
       [...tabs.children].forEach((b, j) => {
         b.setAttribute("aria-pressed", j === i);
         b.className = "px-4 py-2 rounded-full text-sm font-bold transition " + (j === i ? "bg-ink text-white" : "bg-paper hover:bg-sky/30");
