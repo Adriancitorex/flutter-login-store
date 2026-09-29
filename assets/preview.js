@@ -10,7 +10,8 @@ function previewMarkup(type) {
     aurora: ["#10101b","#8c63ff","#ff70b7","Welcome back","you@example.com","••••••••"],
     corporate: ["#f8fafc","#1e3a8a","#64748b","Iniciar Sesión","nombre@empresa.com","••••••••"],
     vibrant: ["#11101b","#ff4f9a","#6d5dfc","Hola de nuevo","Correo electrónico","Contraseña"],
-    cyber: ["#070810","#00f0ff","#ff0055","NIGHT_CITY","NETRUNNER_NAME","••••••••"]
+    cyber: ["#070810","#00f0ff","#ff0055","NIGHT_CITY","NETRUNNER_NAME","••••••••"],
+    liquid: ["#0a1420","#9be7ff","#d39bff","Welcome back","you@example.com","••••••••"]
   }[type] || ["#10131c","#8c63ff","#ff70b7","Sign in","Email","Password"];
 
   return '<div class="phone" style="--bg:'+data[0]+';--accent:'+data[1]+';--accent2:'+data[2]+'">'+
