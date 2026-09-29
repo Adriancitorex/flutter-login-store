@@ -48,6 +48,16 @@ const CATALOG = [
     features: ["Fondo con grid personalizado", "Animación de estado", "Paneles chamfered", "Mostrar/ocultar contraseña", "Elementos neon personalizados"],
     tech: "Flutter / Material",
     preview: "cyber"
+  },
+  {
+    slug: "liquid-glass",
+    title: "Liquid Glass",
+    category: "Glass",
+    price: "MX$79",
+    description: "Vidrio líquido con superficies translúcidas, reflejos suaves, fondos orgánicos y una interfaz premium.",
+    features: ["Efecto liquid glass", "Fondo animado con blobs", "Blur y superficies translúcidas", "Validación de formulario", "Mostrar/ocultar contraseña", "Estado de carga", "Acciones demo"],
+    tech: "Flutter / Material 3",
+    preview: "liquid"
   }
 ];
 
