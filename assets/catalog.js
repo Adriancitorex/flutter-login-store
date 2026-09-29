@@ -54,9 +54,9 @@ const CATALOG = [
     title: "Liquid Glass",
     category: "Glass",
     price: "MX$79",
-    description: "Vidrio líquido con superficies translúcidas, reflejos suaves, fondos orgánicos y una interfaz premium.",
-    features: ["Efecto liquid glass", "Fondo animado con blobs", "Blur y superficies translúcidas", "Validación de formulario", "Mostrar/ocultar contraseña", "Estado de carga", "Acciones demo"],
-    tech: "Flutter / Material 3",
+    description: "Vidrio líquido con superficies translúcidas, reflejos suaves, fondos orgánicos y autenticación básica conectada a una API.",
+    features: ["Efecto liquid glass", "Fondo animado con blobs", "Blur y superficies translúcidas", "Registro e inicio de sesión", "Contraseñas protegidas con hash", "JWT de sesión", "Validación de formulario"],
+    tech: "Flutter / Material 3 + REST API",
     preview: "liquid"
   }
 ];
