@@ -11,7 +11,13 @@ function previewMarkup(type) {
     corporate: ["#f8fafc","#1e3a8a","#64748b","Iniciar Sesión","nombre@empresa.com","••••••••"],
     vibrant: ["#11101b","#ff4f9a","#6d5dfc","Hola de nuevo","Correo electrónico","Contraseña"],
     cyber: ["#070810","#00f0ff","#ff0055","NIGHT_CITY","NETRUNNER_NAME","••••••••"],
-    liquid: ["#0a1420","#9be7ff","#d39bff","Welcome back","you@example.com","••••••••"]
+    liquid: ["#0a1420","#9be7ff","#d39bff","Welcome back","you@example.com","••••••••"],
+    "dark-glass": ["#090b12","#9b8cff","#00c2ff","Welcome back","Email","••••••••"],
+    fintech: ["#f4f7f5","#123b2a","#5c8d73","Secure access","you@example.com","••••••••"],
+    "gradient-flow": ["#5b5fef","#ff6b9d","#b84dff","Hello again!","Email address","••••••••"],
+    "minimal-pro": ["#ffffff","#111111","#777777","Welcome back","Email address","••••••••"],
+    neon: ["#07090d","#53f6c7","#26313d","Access terminal","EMAIL","••••••••"],
+    "split-modern": ["#111111","#343434","#777777","Sign in","Email","••••••••"]
   }[type] || ["#10131c","#8c63ff","#ff70b7","Sign in","Email","Password"];
 
   return '<div class="phone" style="--bg:'+data[0]+';--accent:'+data[1]+';--accent2:'+data[2]+'">'+
@@ -64,7 +70,7 @@ function renderProduct() {
       '<h1>'+escapeHtml(p.title)+'</h1><p class="lead">'+escapeHtml(p.description)+'</p>'+
       '<div class="price">'+escapeHtml(p.price)+'</div>'+
       '<div class="actions"><button class="button primary" disabled>Comprar — próximamente</button></div>'+
-      '<p class="note">La plantilla es UI. No incluye backend ni autenticación real.</p></div>'+
+      '<p class="note">Incluye la interfaz Flutter y los archivos de la plantilla descritos en cada producto.</p></div>'+
     '</section>'+
     '<section class="product-info"><div><div class="eyebrow">INCLUYE</div><h2>Lo que recibes</h2></div>'+
     '<div class="feature-list">'+p.features.map(f=>'<div>✓ <span>'+escapeHtml(f)+'</span></div>').join("")+'</div></section>';
