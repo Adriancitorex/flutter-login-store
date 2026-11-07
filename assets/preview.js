@@ -31,7 +31,9 @@ function getPreviewData(type, palette, productTitle, slug, category) {
   };
 
   const preset = presets[type];
-  if (preset) return { bg:preset[0], accent:preset[1], accent2:preset[2], heading:preset[3], email:preset[4], password:preset[5], variant:preset[6] };
+  const selected = hashText(slug || productTitle) % 20;
+  const variant = "layout-" + selected;
+  if (preset) return { bg:preset[0], accent:preset[1], accent2:preset[2], heading:preset[3], email:preset[4], password:preset[5], variant };
 
   const colors = Array.isArray(palette) ? palette : [];
   let variant = "editorial";
@@ -61,30 +63,29 @@ function previewMarkup(type, palette, productTitle, slug = "", category = "") {
   const form = '<div class="preview-form"><div class="preview-label">EMAIL</div><div class="mini-field"><span class="field-icon">✉</span><span>' + email + '</span></div>' +
     '<div class="preview-label">PASSWORD</div><div class="mini-field"><span class="field-icon">⌑</span><span>' + password + '</span></div>' +
     '<div class="mini-button">CONTINUE <span>↗</span></div></div>';
-  let content = "";
-
-  if (d.variant === "split") {
-    content = '<div class="preview-orbit"></div><div class="preview-brand">✦ <span>STUDIO</span></div><div class="phone-title">' + title + '</div>' +
-      '<div class="phone-sub">A better way to get started</div>' + form +
-      '<div class="preview-foot">New here? <b>Create account</b></div>';
-  } else if (d.variant === "neon") {
-    content = '<div class="preview-brand"><span class="status-dot"></span> SECURE TERMINAL</div><div class="phone-title">' + title + '</div>' +
-      '<div class="phone-sub">IDENTITY VERIFICATION REQUIRED</div>' + form +
-      '<div class="preview-foot mono">SYSTEM READY <b>●</b></div>';
-  } else if (d.variant === "minimal") {
-    content = '<div class="preview-brand">◈ <span>YOUR BRAND</span></div><div class="phone-title">' + title + '</div>' +
-      '<div class="phone-sub">Enter your details to continue</div>' + form +
-      '<div class="preview-foot">Forgot password? <b>Recover</b></div>';
-  } else if (d.variant === "glass") {
-    content = '<div class="preview-glass-panel"><div class="preview-brand">✧ <span>WELCOME</span></div><div class="phone-title">' + title + '</div>' +
-      '<div class="phone-sub">Your space. Your account.</div>' + form +
-      '<div class="preview-foot">Protected sign in <b>✦</b></div></div>';
-  } else {
-    content = '<div class="preview-orbit"></div><div class="preview-brand">✳ <span>MEMBER ACCESS</span></div><div class="phone-title">' + title + '</div>' +
-      '<div class="phone-sub">Everything starts here</div>' + form +
-      '<div class="preview-foot">Continue with <b>Google</b></div>';
-  }
-
+  const layouts = [
+    '<div class="layout-hero">01 / MEMBER ACCESS</div><div class="layout-display">A quieter<br>kind of login.</div>' + form,
+    '<div class="layout-rail"><b>LF</b><span>01</span><span>02</span><span>03</span></div><div class="layout-main"><div class="preview-brand">ATELIER / PRIVATE</div><div class="phone-title">' + title + '</div>' + form + '</div>',
+    '<div class="layout-banner">SECURE<br>YOUR SPACE</div><div class="layout-panel">' + form + '</div>',
+    '<div class="layout-kicker">SYSTEM ACCESS // 07</div><div class="layout-code">AUTH<br><b>IDENTITY</b><br>REQUIRED_</div>' + form,
+    '<div class="layout-orbit"><span>✳</span></div><div class="layout-float"><div class="phone-title">' + title + '</div>' + form + '</div>',
+    '<div class="layout-side-art"><span>✦</span><b>GOOD<br>TO SEE<br>YOU.</b></div><div class="layout-side-form">' + form + '</div>',
+    '<div class="layout-number">0' + ((hashText(slug)%9)+1) + '</div><div class="layout-heading">THE NEXT<br>CHAPTER.</div>' + form,
+    '<div class="layout-topline"><span>LOGINFORGE</span><span>EST. 2026</span></div><div class="layout-editorial">' + title + '</div><div class="layout-rule"></div>' + form,
+    '<div class="layout-grid"><i>✦</i><i>◌</i><i>▧</i><i>↗</i></div><div class="phone-title">' + title + '</div>' + form,
+    '<div class="layout-stamp">VERIFIED<br>ACCESS</div><div class="layout-center"><div class="phone-title">' + title + '</div>' + form + '</div>',
+    '<div class="layout-tabs"><b>01 ACCESS</b><span>02 PROFILE</span></div><div class="phone-title">' + title + '</div><div class="layout-subline">Your account, in focus.</div>' + form,
+    '<div class="layout-vertical">SIGN IN / MEMBER PORTAL / PRIVATE AREA</div><div class="layout-vertical-content"><div class="phone-title">' + title + '</div>' + form + '</div>',
+    '<div class="layout-bento"><b>01</b><span>WELCOME<br>BACK</span><i>✧</i></div><div class="phone-title">' + title + '</div>' + form,
+    '<div class="layout-terminal"><span>● ONLINE</span><span>ENCRYPTION ACTIVE</span></div><div class="layout-terminal-title">> AUTH_USER</div>' + form,
+    '<div class="layout-ticket"><span>MEMBER PASS</span><b>ACCESS<br>GRANTED?</b><i>✳</i></div>' + form,
+    '<div class="layout-arch"><div class="layout-arch-inner">LF</div></div><div class="phone-title">' + title + '</div>' + form,
+    '<div class="layout-quote">“Make room<br>for what<br>matters.”</div><div class="layout-form-card">' + form + '</div>',
+    '<div class="layout-split-head"><span>HELLO.</span><b>01—26</b></div><div class="layout-split-body"><div class="phone-title">' + title + '</div>' + form + '</div>',
+    '<div class="layout-rings"><i></i><i></i><i></i></div><div class="phone-title">' + title + '</div>' + form,
+    '<div class="layout-masthead">THE PRIVATE<br>COLLECTION</div><div class="layout-mini-meta">MEMBER LOGIN · ISSUE Nº 01</div>' + form
+  ];
+  const content = layouts[hashText(slug || productTitle) % layouts.length];
   return '<div class="phone phone--' + d.variant + '" style="--bg:' + d.bg + ';--accent:' + d.accent + ';--accent2:' + d.accent2 + '">' +
     '<div class="phone-top"></div>' + content + '</div>';
 }
@@ -162,7 +163,9 @@ function renderProduct() {
 
   root.innerHTML =
     '<section class="product-hero">' +
-      '<div class="product-preview">' + previewMarkup(p.preview, p.palette, p.title, p.slug, p.category) + '</div>' +
+      '<div class="product-preview">' + previewMarkup(p.preview, p.palette, p.title, p.slug, p.category) +
+        '<button class="product-nav product-nav--prev" type="button" aria-label="Diseño anterior" title="Diseño anterior">‹</button>' +
+        '<button class="product-nav product-nav--next" type="button" aria-label="Siguiente diseño" title="Siguiente diseño">›</button></div>' +
       '<div class="product-copy"><div class="eyebrow">' + escapeHtml(p.category) + ' / FLUTTER UI</div>' +
       '<h1>' + escapeHtml(p.title) + '</h1><p class="lead">' + escapeHtml(p.description) + '</p>' +
       '<div class="price">' + escapeHtml(p.price) + '</div>' +
@@ -171,8 +174,7 @@ function renderProduct() {
     '</section>' +
     '<section class="product-info"><div><div class="eyebrow">INCLUYE</div><h2>Características</h2></div>' +
     '<div class="feature-list">' + p.features.map(f=>'<div>✓ <span>' + escapeHtml(f) + '</span></div>').join("") + '</div></section>' +
-    '<button class="product-nav product-nav--prev" type="button" aria-label="Diseño anterior" title="Diseño anterior">‹</button>' +
-    '<button class="product-nav product-nav--next" type="button" aria-label="Siguiente diseño" title="Siguiente diseño">›</button>';
+    '';
 
   const currentIndex = Math.max(0, CATALOG.findIndex(item => item.slug === p.slug));
   const navigate = offset => {
