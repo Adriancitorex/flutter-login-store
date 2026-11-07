@@ -30,3 +30,23 @@
 .phone--split .preview-orbit{width:160px;height:90px;right:-75px;top:5px;transform:rotate(-25deg);border-radius:45%}
 .phone--editorial .preview-brand{margin-top:8px}
 @media(max-width:600px){.preview{min-height:290px}}
+
+/* Browseable catalog carousel */
+.catalog-tools{display:flex;flex-direction:column;align-items:stretch;gap:15px;min-width:min(100%,520px)}
+.search-box{height:44px;display:flex;align-items:center;gap:10px;padding:0 14px;border:1px solid #292e3a;border-radius:12px;background:#10131b;color:#9d7cff}
+.search-box span{font-size:23px;line-height:1}
+.search-box input{width:100%;min-width:0;border:0;outline:0;background:transparent;color:#f4f5f7;font:inherit;font-size:14px}
+.search-box input::placeholder{color:#777f8f}
+.catalog-tools .filters{justify-content:flex-start}
+.browse-controls{display:flex;align-items:center;gap:12px;justify-content:flex-end;color:#9299a8;font-size:12px;font-variant-numeric:tabular-nums}
+.browse-arrow{width:38px;height:36px;border:1px solid #343a48;border-radius:10px;background:#151923;color:#f4f5f7;font-size:20px;cursor:pointer;transition:.2s}
+.browse-arrow:hover{background:#a68aff;color:#090b11;border-color:#a68aff}
+.catalog-rail{display:flex;gap:18px;overflow-x:auto;overflow-y:hidden;padding:8px 2px 24px;scroll-snap-type:x mandatory;scroll-behavior:smooth;overscroll-behavior-x:contain;touch-action:pan-x;scrollbar-width:thin;scrollbar-color:#51456e #151821}
+.catalog-rail .card{flex:0 0 clamp(280px,31vw,360px);scroll-snap-align:start}
+.catalog-rail .preview{min-height:280px}
+.swipe-hint{margin:4px 0 0;text-align:center;color:#81899a;font-size:12px}
+.swipe-hint span{color:#a68aff;font-size:17px;margin-left:5px}
+.empty-state{min-height:240px;min-width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;color:#9299a8;border:1px dashed #343a48;border-radius:18px}
+.empty-state strong{color:#f4f5f7}
+@media(max-width:850px){.section-head{align-items:flex-start}.catalog-tools{width:100%;min-width:0}.catalog-rail .card{flex-basis:min(78vw,340px)}}
+@media(max-width:600px){.catalog-rail{gap:13px;margin-right:-18px;padding-right:18px}.catalog-rail .card{flex-basis:82vw}.browse-controls{justify-content:center}.section-head{gap:18px}}
