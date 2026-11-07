@@ -1,0 +1,25 @@
+name: Validate LoginForge catalog
+
+on:
+  pull_request:
+    paths:
+      - 'assets/catalog.js'
+      - 'assets/preview.js'
+      - '.github/workflows/validate-catalog.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  syntax:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check catalog JavaScript syntax
+        run: |
+          node --check assets/catalog.js
+          node --check assets/preview.js
