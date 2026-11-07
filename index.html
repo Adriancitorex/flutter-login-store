@@ -25,9 +25,9 @@
     <section id="catalogo" class="section">
       <div class="section-head">
         <div><div class="eyebrow">CATÁLOGO</div><h2>Elige tu estilo</h2></div>
-        <div id="filters" class="filters"></div>
+        <div class="catalog-tools"><label class="search-box"><span>⌕</span><input id="catalog-search" type="search" placeholder="Buscar diseño..." aria-label="Buscar diseños"></label><div id="filters" class="filters"></div><div class="browse-controls"><button id="catalog-prev" class="browse-arrow" type="button" aria-label="Diseños anteriores">←</button><span id="catalog-count" aria-live="polite">1 / 101</span><button id="catalog-next" class="browse-arrow" type="button" aria-label="Diseños siguientes">→</button></div></div>
       </div>
-      <div id="catalog" class="grid"></div>
+      <div id="catalog" class="catalog-rail" aria-label="Carrusel de diseños"></div><p class="swipe-hint">Desliza para descubrir más diseños <span>→</span></p>
     </section>
 
     <section id="como-funciona" class="how section">
