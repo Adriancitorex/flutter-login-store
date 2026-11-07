@@ -103,17 +103,54 @@ function renderCatalog() {
   const root = document.getElementById("catalog");
   if (!root) return;
   const filters = document.getElementById("filters");
+  const search = document.getElementById("catalog-search");
+  const count = document.getElementById("catalog-count");
+  const prev = document.getElementById("catalog-prev");
+  const next = document.getElementById("catalog-next");
   const categories = ["Todos", ...new Set(CATALOG.map(p=>p.category))];
   let active = "Todos";
+  let query = "";
+
+  function updateCounter() {
+    const cards = [...root.children];
+    if (!cards.length) {
+      count.textContent = "Sin resultados";
+      return;
+    }
+    const first = Math.round(root.scrollLeft / Math.max(1, cards[0].getBoundingClientRect().width + 18)) + 1;
+    const visible = Math.min(cards.length, first);
+    count.textContent = visible + " / " + cards.length;
+  }
 
   function draw() {
-    root.innerHTML = CATALOG.filter(p=>active==="Todos" || p.category===active).map(renderCard).join("");
+    const normalized = query.trim().toLocaleLowerCase("es");
+    const products = CATALOG.filter(p =>
+      (active === "Todos" || p.category === active) &&
+      (!normalized || [p.title,p.description,p.category,...p.features].join(" ").toLocaleLowerCase("es").includes(normalized))
+    );
+    root.innerHTML = products.length ? products.map(renderCard).join("") :
+      '<div class="empty-state"><strong>No encontramos ese diseño.</strong><span>Prueba con otro nombre o categoría.</span></div>';
     filters.innerHTML = categories.map(c=>'<button class="chip ' + (c===active?"active":"") + '" data-category="' + escapeHtml(c) + '">' + escapeHtml(c) + '</button>').join("");
     filters.querySelectorAll(".chip").forEach(btn => btn.addEventListener("click", () => {
       active = btn.dataset.category;
+      root.scrollTo({left:0,behavior:"smooth"});
       draw();
     }));
+    updateCounter();
   }
+
+  search?.addEventListener("input", () => {
+    query = search.value;
+    root.scrollTo({left:0,behavior:"smooth"});
+    draw();
+  });
+  prev?.addEventListener("click", () => root.scrollBy({left:-root.clientWidth * .82,behavior:"smooth"}));
+  next?.addEventListener("click", () => root.scrollBy({left:root.clientWidth * .82,behavior:"smooth"}));
+  root.addEventListener("scroll", updateCounter, {passive:true});
+  root.addEventListener("keydown", event => {
+    if (event.key === "ArrowRight") root.scrollBy({left:300,behavior:"smooth"});
+    if (event.key === "ArrowLeft") root.scrollBy({left:-300,behavior:"smooth"});
+  });
   draw();
 }
 
