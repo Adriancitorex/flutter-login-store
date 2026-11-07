@@ -1,6 +1,7 @@
 const CATALOG = [
   {
     slug: "pastel",
+    file: "login_estilo_1.dart",
     title: "Pastel Minimal",
     category: "Minimal",
     price: "MX$49",
@@ -11,6 +12,7 @@ const CATALOG = [
   },
   {
     slug: "aurora-glass",
+    file: "login_estilo_2.dart",
     title: "Aurora Glass",
     category: "Glass",
     price: "MX$69",
@@ -21,6 +23,7 @@ const CATALOG = [
   },
   {
     slug: "corporate",
+    file: "login_estilo_3.dart",
     title: "Corporate",
     category: "Business",
     price: "MX$59",
@@ -31,6 +34,7 @@ const CATALOG = [
   },
   {
     slug: "vibrant",
+    file: "login_estilo_4.dart",
     title: "Vibrant",
     category: "Gradient",
     price: "MX$59",
@@ -41,6 +45,7 @@ const CATALOG = [
   },
   {
     slug: "cyberpunk",
+    file: "login_estilo_5.dart",
     title: "Cyberpunk",
     category: "Futuristic",
     price: "MX$79",
@@ -51,6 +56,7 @@ const CATALOG = [
   },
   {
     slug: "liquid-glass",
+    file: "login_estilo_6.dart",
     title: "Liquid Glass",
     category: "Glass",
     price: "MX$79",
@@ -61,6 +67,7 @@ const CATALOG = [
   },
   {
     slug: "dark-glass",
+    file: "login_dark_glass.dart",
     title: "Dark Glass",
     category: "Glass",
     price: "MX$69",
@@ -71,6 +78,7 @@ const CATALOG = [
   },
   {
     slug: "fintech",
+    file: "login_fintech.dart",
     title: "Fintech",
     category: "Business",
     price: "MX$69",
@@ -81,6 +89,7 @@ const CATALOG = [
   },
   {
     slug: "gradient-flow",
+    file: "login_gradient_flow.dart",
     title: "Gradient Flow",
     category: "Gradient",
     price: "MX$59",
@@ -91,6 +100,7 @@ const CATALOG = [
   },
   {
     slug: "minimal-pro",
+    file: "login_minimal_pro.dart",
     title: "Minimal Pro",
     category: "Minimal",
     price: "MX$69",
@@ -101,6 +111,7 @@ const CATALOG = [
   },
   {
     slug: "neon",
+    file: "login_neon.dart",
     title: "Neon",
     category: "Futuristic",
     price: "MX$69",
@@ -111,6 +122,7 @@ const CATALOG = [
   },
   {
     slug: "split-modern",
+    file: "login_split_modern.dart",
     title: "Split Modern",
     category: "Business",
     price: "MX$79",
