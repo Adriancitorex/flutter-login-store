@@ -900,7 +900,7 @@ CATALOG.push(...[
   },
   {
     "slug": "studio-cywo3f",
-    "title": "Portal Corporativo",
+    "title": "Contour Atlas Portal",
     "category": "Business",
     "price": "Próximamente",
     "file": "login_rand_cywo3f.dart",
@@ -963,7 +963,7 @@ CATALOG.push(...[
   },
   {
     "slug": "studio-eibvfw",
-    "title": "Glassmorphic Login UI",
+    "title": "Buttercream Arch Login",
     "category": "Glass",
     "price": "Próximamente",
     "file": "login_rand_eibvfw.dart",
@@ -1089,7 +1089,7 @@ CATALOG.push(...[
   },
   {
     "slug": "studio-in2ic6",
-    "title": "Minimalist Pastel Login",
+    "title": "Brushed Alloy Bento",
     "category": "Soft",
     "price": "Próximamente",
     "file": "login_rand_in2ic6.dart",
@@ -1194,7 +1194,7 @@ CATALOG.push(...[
   },
   {
     "slug": "studio-kcqnuw",
-    "title": "Vibrant Gradient Login",
+    "title": "Lime Arc Studio",
     "category": "Gradient",
     "price": "Próximamente",
     "file": "login_rand_kcqnuw.dart",
@@ -1278,7 +1278,7 @@ CATALOG.push(...[
   },
   {
     "slug": "studio-lr6lo6",
-    "title": "Neon Noir Authentication",
+    "title": "Icewire Circuit Access",
     "category": "Futuristic",
     "price": "Próximamente",
     "file": "login_rand_lr6lo6.dart",
@@ -1383,7 +1383,7 @@ CATALOG.push(...[
   },
   {
     "slug": "studio-n1mh44",
-    "title": "Glassmorphic Login UI",
+    "title": "Paperwave Glass",
     "category": "Glass",
     "price": "Próximamente",
     "file": "login_rand_n1mh44.dart",
@@ -1404,7 +1404,7 @@ CATALOG.push(...[
   },
   {
     "slug": "studio-na9x0z",
-    "title": "Neumorphic Auth UI",
+    "title": "Sonic Relief Login",
     "category": "Soft",
     "price": "Próximamente",
     "file": "login_rand_na9x0z.dart",
@@ -1530,7 +1530,7 @@ CATALOG.push(...[
   },
   {
     "slug": "studio-qemhs4",
-    "title": "Glassmorphic Login UI",
+    "title": "Ceramic Grid Portal",
     "category": "Glass",
     "price": "Próximamente",
     "file": "login_rand_qemhs4.dart",
@@ -1761,7 +1761,7 @@ CATALOG.push(...[
   },
   {
     "slug": "studio-ur30bx",
-    "title": "Vibrant Gradient Login",
+    "title": "Ceramic Cover Story",
     "category": "Gradient",
     "price": "Próximamente",
     "file": "login_rand_ur30bx.dart",
@@ -1803,7 +1803,7 @@ CATALOG.push(...[
   },
   {
     "slug": "studio-vzrhhk",
-    "title": "Portal Corporativo",
+    "title": "Botanical Access Suite",
     "category": "Business",
     "price": "Próximamente",
     "file": "login_rand_vzrhhk.dart",
@@ -1887,7 +1887,7 @@ CATALOG.push(...[
   },
   {
     "slug": "studio-x6foyk",
-    "title": "Portal Corporativo",
+    "title": "Coral Blueprint Workspace",
     "category": "Business",
     "price": "Próximamente",
     "file": "login_rand_x6foyk.dart",
@@ -1908,7 +1908,7 @@ CATALOG.push(...[
   },
   {
     "slug": "studio-xed8wz",
-    "title": "Holographic Access Portal",
+    "title": "Orbit Rail Authentication",
     "category": "Futuristic",
     "price": "Próximamente",
     "file": "login_rand_xed8wz.dart",
@@ -1992,7 +1992,7 @@ CATALOG.push(...[
   },
   {
     "slug": "studio-y1hp49",
-    "title": "Glassmorphism Login",
+    "title": "Ceramic Product Access",
     "category": "Glass",
     "price": "Próximamente",
     "file": "login_rand_y1hp49.dart",
@@ -2013,7 +2013,7 @@ CATALOG.push(...[
   },
   {
     "slug": "studio-y4syiv",
-    "title": "Apex Athlete Login",
+    "title": "Athlete Sculpture Portal",
     "category": "Sport",
     "price": "Próximamente",
     "file": "login_rand_y4syiv.dart",
