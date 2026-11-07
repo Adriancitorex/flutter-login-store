@@ -150,7 +150,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#070811","#00F0FF","#FF4FD8"]
   },
   {
     "slug": "studio-023av2",
@@ -166,7 +167,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#070811","#00F0FF","#FF4FD8"]
   },
   {
     "slug": "studio-02d0u3",
@@ -182,7 +184,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#050614","#8AE5FF","#8A5CFF"]
   },
   {
     "slug": "studio-0cw0ib",
@@ -198,7 +201,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#F7F6F2","#8EAA91","#D8A6B8"]
   },
   {
     "slug": "studio-1p8bnx",
@@ -214,7 +218,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#170D28","#FF4F9A","#7A5CFF"]
   },
   {
     "slug": "studio-21pobq",
@@ -230,7 +235,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#070811","#00F0FF","#FF4FD8"]
   },
   {
     "slug": "studio-23wu9u",
@@ -246,7 +252,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#F7F6F2","#8EAA91","#D8A6B8"]
   },
   {
     "slug": "studio-278xli",
@@ -262,7 +269,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#F7F6F2","#8EAA91","#D8A6B8"]
   },
   {
     "slug": "studio-31c2wb",
@@ -278,7 +286,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#F7F6F2","#8EAA91","#D8A6B8"]
   },
   {
     "slug": "studio-48rhv6",
@@ -294,7 +303,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#F7F6F2","#8EAA91","#D8A6B8"]
   },
   {
     "slug": "studio-4axpza",
@@ -310,7 +320,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#070811","#00F0FF","#FF4FD8"]
   },
   {
     "slug": "studio-4pngtq",
@@ -326,7 +337,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#070811","#00F0FF","#FF4FD8"]
   },
   {
     "slug": "studio-4sfmp4",
@@ -342,7 +354,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#100E11","#D4AF70","#F1DFC0"]
   },
   {
     "slug": "studio-5es8ih",
@@ -358,7 +371,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#070811","#00F0FF","#FF4FD8"]
   },
   {
     "slug": "studio-65dm8v",
@@ -374,7 +388,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#F5F7FA","#244B83","#6A9A92"]
   },
   {
     "slug": "studio-79c07l",
@@ -390,7 +405,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#15181D","#FFB703","#A4ABB5"]
   },
   {
     "slug": "studio-7zj8d5",
@@ -406,7 +422,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#050614","#8AE5FF","#8A5CFF"]
   },
   {
     "slug": "studio-83royt",
@@ -422,7 +439,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#10051D","#FF4C9A","#00E5FF"]
   },
   {
     "slug": "studio-8pr80v",
@@ -438,7 +456,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#0D1014","#D4FF00","#FF4A5E"]
   },
   {
     "slug": "studio-91ckpb",
@@ -454,7 +473,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#0D0B1C","#9B7CFF","#43D9D2"]
   },
   {
     "slug": "studio-9dmagf",
@@ -470,7 +490,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#070811","#00F0FF","#FF4FD8"]
   },
   {
     "slug": "studio-9fqny0",
@@ -486,7 +507,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#F5F7FA","#244B83","#6A9A92"]
   },
   {
     "slug": "studio-9q4yid",
@@ -502,7 +524,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#070811","#00F0FF","#FF4FD8"]
   },
   {
     "slug": "studio-9s7p7q",
@@ -518,7 +541,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#F7F6F2","#8EAA91","#D8A6B8"]
   },
   {
     "slug": "studio-a1vqk3",
@@ -534,7 +558,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#F7F6F2","#8EAA91","#D8A6B8"]
   },
   {
     "slug": "studio-a2nsr1",
@@ -550,7 +575,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#070811","#00F0FF","#FF4FD8"]
   },
   {
     "slug": "studio-aphyi1",
@@ -566,7 +592,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#15181D","#FFB703","#A4ABB5"]
   },
   {
     "slug": "studio-axluut",
@@ -582,7 +609,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#100E11","#D4AF70","#F1DFC0"]
   },
   {
     "slug": "studio-blw6k0",
@@ -598,7 +626,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#0D1014","#D4FF00","#FF4A5E"]
   },
   {
     "slug": "studio-bracyk",
@@ -614,7 +643,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#F7F3E9","#151515","#FF5C45"]
   },
   {
     "slug": "studio-brdtp5",
@@ -630,7 +660,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#F7F6F2","#8EAA91","#D8A6B8"]
   },
   {
     "slug": "studio-c01bed",
@@ -646,7 +677,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#10051D","#FF4C9A","#00E5FF"]
   },
   {
     "slug": "studio-c7kki4",
@@ -662,7 +694,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#100E11","#D4AF70","#F1DFC0"]
   },
   {
     "slug": "studio-cmzgtk",
@@ -678,7 +711,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#070811","#00F0FF","#FF4FD8"]
   },
   {
     "slug": "studio-cywo3f",
@@ -694,7 +728,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#F5F7FA","#244B83","#6A9A92"]
   },
   {
     "slug": "studio-dza9w8",
@@ -710,7 +745,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#F8F7F3","#222222","#A58A62"]
   },
   {
     "slug": "studio-eg6kbx",
@@ -726,7 +762,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#F7F6F2","#8EAA91","#D8A6B8"]
   },
   {
     "slug": "studio-eibvfw",
@@ -742,7 +779,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#0D0B1C","#9B7CFF","#43D9D2"]
   },
   {
     "slug": "studio-ejr3ej",
@@ -758,7 +796,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#100E11","#D4AF70","#F1DFC0"]
   },
   {
     "slug": "studio-fw0v83",
@@ -774,7 +813,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#F7F6F2","#8EAA91","#D8A6B8"]
   },
   {
     "slug": "studio-fw6xbl",
@@ -790,7 +830,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#070811","#00F0FF","#FF4FD8"]
   },
   {
     "slug": "studio-gmdrgp",
@@ -806,7 +847,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#170D28","#FF4F9A","#7A5CFF"]
   },
   {
     "slug": "studio-hiozr8",
@@ -822,7 +864,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#15181D","#FFB703","#A4ABB5"]
   },
   {
     "slug": "studio-in2ic6",
@@ -838,7 +881,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#F7F6F2","#8EAA91","#D8A6B8"]
   },
   {
     "slug": "studio-j7b29h",
@@ -854,7 +898,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#050614","#8AE5FF","#8A5CFF"]
   },
   {
     "slug": "studio-jgapdm",
@@ -870,7 +915,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#0D1014","#D4FF00","#FF4A5E"]
   },
   {
     "slug": "studio-jq3oiw",
@@ -886,7 +932,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#F7F6F2","#8EAA91","#D8A6B8"]
   },
   {
     "slug": "studio-k7wwdb",
@@ -902,7 +949,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#F8F7F3","#222222","#A58A62"]
   },
   {
     "slug": "studio-kcqnuw",
@@ -918,7 +966,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#170D28","#FF4F9A","#7A5CFF"]
   },
   {
     "slug": "studio-kcqp0y",
@@ -934,7 +983,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#070811","#00F0FF","#FF4FD8"]
   },
   {
     "slug": "studio-kd5why",
@@ -950,7 +1000,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#0D1014","#D4FF00","#FF4A5E"]
   },
   {
     "slug": "studio-kpgvn0",
@@ -966,7 +1017,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#050614","#8AE5FF","#8A5CFF"]
   },
   {
     "slug": "studio-lr6lo6",
@@ -982,7 +1034,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#070811","#00F0FF","#FF4FD8"]
   },
   {
     "slug": "studio-ltmbyo",
@@ -998,7 +1051,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#070811","#00F0FF","#FF4FD8"]
   },
   {
     "slug": "studio-maxijv",
@@ -1014,7 +1068,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#0D0B1C","#9B7CFF","#43D9D2"]
   },
   {
     "slug": "studio-mg2tvz",
@@ -1030,7 +1085,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#070811","#00F0FF","#FF4FD8"]
   },
   {
     "slug": "studio-mj67oe",
@@ -1046,7 +1102,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#F8F7F3","#222222","#A58A62"]
   },
   {
     "slug": "studio-n1mh44",
@@ -1062,7 +1119,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#0D0B1C","#9B7CFF","#43D9D2"]
   },
   {
     "slug": "studio-na9x0z",
@@ -1078,7 +1136,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#F7F6F2","#8EAA91","#D8A6B8"]
   },
   {
     "slug": "studio-nasa26",
@@ -1094,7 +1153,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#070811","#00F0FF","#FF4FD8"]
   },
   {
     "slug": "studio-nq7zl2",
@@ -1110,7 +1170,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#0D1014","#D4FF00","#FF4A5E"]
   },
   {
     "slug": "studio-pbvpss",
@@ -1126,7 +1187,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#10051D","#FF4C9A","#00E5FF"]
   },
   {
     "slug": "studio-prg5zw",
@@ -1142,7 +1204,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#070811","#00F0FF","#FF4FD8"]
   },
   {
     "slug": "studio-qarav1",
@@ -1158,7 +1221,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#100E11","#D4AF70","#F1DFC0"]
   },
   {
     "slug": "studio-qemhs4",
@@ -1174,7 +1238,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#0D0B1C","#9B7CFF","#43D9D2"]
   },
   {
     "slug": "studio-qlaiol",
@@ -1190,7 +1255,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#0D1014","#D4FF00","#FF4A5E"]
   },
   {
     "slug": "studio-qqhyj6",
@@ -1206,7 +1272,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#170D28","#FF4F9A","#7A5CFF"]
   },
   {
     "slug": "studio-qu0o4e",
@@ -1222,7 +1289,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#070811","#00F0FF","#FF4FD8"]
   },
   {
     "slug": "studio-r8uv57",
@@ -1238,7 +1306,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#070811","#00F0FF","#FF4FD8"]
   },
   {
     "slug": "studio-rp56d0",
@@ -1254,7 +1323,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#070811","#00F0FF","#FF4FD8"]
   },
   {
     "slug": "studio-rqs8d1",
@@ -1270,7 +1340,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#F7F6F2","#8EAA91","#D8A6B8"]
   },
   {
     "slug": "studio-sei2p0",
@@ -1286,7 +1357,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#F5F7FA","#244B83","#6A9A92"]
   },
   {
     "slug": "studio-syndb4",
@@ -1302,7 +1374,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#170D28","#FF4F9A","#7A5CFF"]
   },
   {
     "slug": "studio-tsnvah",
@@ -1318,7 +1391,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#070811","#00F0FF","#FF4FD8"]
   },
   {
     "slug": "studio-umx9vt",
@@ -1334,7 +1408,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#170D28","#FF4F9A","#7A5CFF"]
   },
   {
     "slug": "studio-ur30bx",
@@ -1350,7 +1425,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#170D28","#FF4F9A","#7A5CFF"]
   },
   {
     "slug": "studio-v3zz1t",
@@ -1366,7 +1442,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#F7F3E9","#151515","#FF5C45"]
   },
   {
     "slug": "studio-vzrhhk",
@@ -1382,7 +1459,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#F5F7FA","#244B83","#6A9A92"]
   },
   {
     "slug": "studio-w2up4l",
@@ -1398,7 +1476,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#050614","#8AE5FF","#8A5CFF"]
   },
   {
     "slug": "studio-w9jda6",
@@ -1414,7 +1493,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#070811","#00F0FF","#FF4FD8"]
   },
   {
     "slug": "studio-wopa7u",
@@ -1430,7 +1510,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#F7F6F2","#8EAA91","#D8A6B8"]
   },
   {
     "slug": "studio-x6foyk",
@@ -1446,7 +1527,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#F5F7FA","#244B83","#6A9A92"]
   },
   {
     "slug": "studio-xed8wz",
@@ -1462,7 +1544,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#070811","#00F0FF","#FF4FD8"]
   },
   {
     "slug": "studio-xk3cyr",
@@ -1478,7 +1561,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#10051D","#FF4C9A","#00E5FF"]
   },
   {
     "slug": "studio-xrev7h",
@@ -1494,7 +1578,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#0D0B1C","#9B7CFF","#43D9D2"]
   },
   {
     "slug": "studio-xyom6a",
@@ -1510,7 +1595,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#F7F6F2","#8EAA91","#D8A6B8"]
   },
   {
     "slug": "studio-y1hp49",
@@ -1526,7 +1612,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#0D0B1C","#9B7CFF","#43D9D2"]
   },
   {
     "slug": "studio-y4syiv",
@@ -1542,7 +1629,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#0D1014","#D4FF00","#FF4A5E"]
   },
   {
     "slug": "studio-zbjidm",
@@ -1558,7 +1646,8 @@ CATALOG.push(...[
       "Autenticación real requiere integración"
     ],
     "tech": "Flutter / Dart",
-    "preview": "generated"
+    "preview": "generated",
+    "palette": ["#10051D","#FF4C9A","#00E5FF"]
   }
 ]);
 
