@@ -70,7 +70,7 @@ function renderProduct() {
       '<h1>'+escapeHtml(p.title)+'</h1><p class="lead">'+escapeHtml(p.description)+'</p>'+
       '<div class="price">'+escapeHtml(p.price)+'</div>'+
       '<div class="actions"><button class="button primary" disabled>Comprar — próximamente</button></div>'+
-      '<p class="note">Incluye la interfaz Flutter y los archivos de la plantilla descritos en cada producto.</p></div>'+
+      '<p class="note">Vista previa del diseño. La compra y descarga aún no están habilitadas; la autenticación real requiere integración.</p></div>'+
     '</section>'+
     '<section class="product-info"><div><div class="eyebrow">INCLUYE</div><h2>Lo que recibes</h2></div>'+
     '<div class="feature-list">'+p.features.map(f=>'<div>✓ <span>'+escapeHtml(f)+'</span></div>').join("")+'</div></section>';
