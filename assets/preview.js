@@ -14,7 +14,7 @@ function hashText(value) {
   return hash;
 }
 
-function getPreviewData(type, palette, productTitle, slug, category) {
+function getPreviewData(type, palette, productTitle, slug, category, composition) {
   const presets = {
     pastel: ["#f8f9fc","#9aa7d8","#d6b8e8","Hola de nuevo","Correo electrónico","Contraseña","minimal"],
     aurora: ["#10101b","#8c63ff","#ff70b7","Welcome back","you@example.com","••••••••","glass"],
@@ -31,9 +31,10 @@ function getPreviewData(type, palette, productTitle, slug, category) {
   };
 
   const preset = presets[type];
-  const selected = hashText(slug || productTitle) % 20;
-  const variant = "layout-" + selected;
-  if (preset) return { bg:preset[0], accent:preset[1], accent2:preset[2], heading:preset[3], email:preset[4], password:preset[5], variant };
+  const compositionTypes = [...new Set(CATALOG.map(item => item.composition).filter(Boolean))];
+  const compositionIndex = Math.max(0, compositionTypes.indexOf(composition));
+  const variant = "layout-" + compositionIndex;
+  if (preset) return { bg:preset[0], accent:preset[1], accent2:preset[2], heading:preset[3], email:preset[4], password:preset[5], variant, compositionIndex };
 
   const colors = Array.isArray(palette) ? palette : [];
 
@@ -44,12 +45,13 @@ function getPreviewData(type, palette, productTitle, slug, category) {
     heading: productTitle || "Sign in",
     email: "Email address",
     password: "••••••••",
-    variant
+    variant,
+    compositionIndex
   };
 }
 
-function previewMarkup(type, palette, productTitle, slug = "", category = "") {
-  const d = getPreviewData(type, palette, productTitle, slug, category);
+function previewMarkup(type, palette, productTitle, slug = "", category = "", composition = "", signatureMotif = "") {
+  const d = getPreviewData(type, palette, productTitle, slug, category, composition);
   const title = escapeHtml(d.heading);
   const email = escapeHtml(d.email);
   const password = escapeHtml(d.password);
@@ -76,17 +78,19 @@ function previewMarkup(type, palette, productTitle, slug = "", category = "") {
     '<div class="layout-quote">“Make room<br>for what<br>matters.”</div><div class="layout-form-card">' + form + '</div>',
     '<div class="layout-split-head"><span>HELLO.</span><b>01—26</b></div><div class="layout-split-body"><div class="phone-title">' + title + '</div>' + form + '</div>',
     '<div class="layout-rings"><i></i><i></i><i></i></div><div class="phone-title">' + title + '</div>' + form,
-    '<div class="layout-masthead">THE PRIVATE<br>COLLECTION</div><div class="layout-mini-meta">MEMBER LOGIN · ISSUE Nº 01</div>' + form
+    '<div class="layout-masthead">THE PRIVATE<br>COLLECTION</div><div class="layout-mini-meta">MEMBER LOGIN · ISSUE Nº 01</div>' + form,
+    '<div class="layout-blueprint-head"><span>STUDIO / 22</span><b>01—ACCESS</b></div><div class="layout-blueprint-art"><i></i><i></i><i></i><b>' + title + '</b></div><div class="layout-blueprint-form">' + form + '</div>',
+    '<div class="layout-floating-mark"><span>LF</span><i></i><b>WELCOME<br>TO YOUR<br>SPACE.</b></div><div class="layout-floating-form">' + form + '</div>'
   ];
-  const content = layouts[hashText(slug || productTitle) % layouts.length];
-  return '<div class="phone phone--' + d.variant + '" style="--bg:' + d.bg + ';--accent:' + d.accent + ';--accent2:' + d.accent2 + '">' +
+  const content = layouts[d.compositionIndex % layouts.length];
+  return '<div class="phone phone--' + d.variant + '" data-composition="' + escapeHtml(composition) + '" data-motif="' + escapeHtml(signatureMotif) + '" style="--bg:' + d.bg + ';--accent:' + d.accent + ';--accent2:' + d.accent2 + '">' +
     '<div class="phone-top"></div>' + content + '</div>';
 }
 
 function renderCard(product) {
   return '<article class="card">' +
     '<a class="preview" href="producto.html?style=' + encodeURIComponent(product.slug) + '" aria-label="Ver vista previa de ' + escapeHtml(product.title) + '">' +
-    previewMarkup(product.preview, product.palette, product.title, product.slug, product.category) + '</a>' +
+    previewMarkup(product.preview, product.palette, product.title, product.slug, product.category, product.composition, product.signatureMotif) + '</a>' +
     '<div class="card-body"><div class="meta"><span>' + escapeHtml(product.category) + '</span><b>' + escapeHtml(product.price) + '</b></div>' +
     '<h3>' + escapeHtml(product.title) + '</h3><p>' + escapeHtml(product.description) + '</p>' +
     '<div class="tags">' + product.features.slice(0,3).map(f=>'<span>' + escapeHtml(f) + '</span>').join("") + '</div>' +
@@ -156,7 +160,7 @@ function renderProduct() {
 
   root.innerHTML =
     '<section class="product-hero">' +
-      '<div class="product-preview">' + previewMarkup(p.preview, p.palette, p.title, p.slug, p.category) +
+      '<div class="product-preview">' + previewMarkup(p.preview, p.palette, p.title, p.slug, p.category, p.composition, p.signatureMotif) +
         '<button class="product-nav product-nav--prev" type="button" aria-label="Diseño anterior" title="Diseño anterior">‹</button>' +
         '<button class="product-nav product-nav--next" type="button" aria-label="Siguiente diseño" title="Siguiente diseño">›</button></div>' +
       '<div class="product-copy"><div class="eyebrow">' + escapeHtml(p.category) + ' / FLUTTER UI</div>' +
@@ -165,6 +169,8 @@ function renderProduct() {
       '<div class="actions"><button class="button primary" disabled>Disponible próximamente</button></div>' +
       '<p class="note">Vista conceptual de la interfaz basada en la identidad visual de esta plantilla. No es una captura del render Flutter. La compra y descarga aún no están habilitadas; la autenticación real requiere integración.</p></div>' +
     '</section>' +
+    '<section class="art-direction"><div><div class="eyebrow">DIRECCIÓN DE ARTE</div><h2>Una composición propia</h2><p>' + escapeHtml(p.composition || "Composición visual exclusiva") + '</p></div>' +
+    '<div class="art-direction-details"><div><span>Motivo protagonista</span><b>' + escapeHtml(p.signatureMotif || "Motivo gráfico propio") + '</b></div><div><span>Sistema tipográfico</span><b>' + escapeHtml(p.typography || "Jerarquía tipográfica propia") + '</b></div></div></section>' +
     '<section class="product-info"><div><div class="eyebrow">INCLUYE</div><h2>Características</h2></div>' +
     '<div class="feature-list">' + p.features.map(f=>'<div>✓ <span>' + escapeHtml(f) + '</span></div>').join("") + '</div></section>' +
     '';
