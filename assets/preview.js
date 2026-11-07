@@ -4,7 +4,7 @@ function escapeHtml(value) {
   }[c]));
 }
 
-function previewMarkup(type) {
+function previewMarkup(type, palette) {
   const data = {
     pastel: ["#f8f9fa","#c9ccd5","#b8c0ff","Bienvenido","Correo electrónico","Contraseña"],
     aurora: ["#10101b","#8c63ff","#ff70b7","Welcome back","you@example.com","••••••••"],
@@ -18,7 +18,7 @@ function previewMarkup(type) {
     "minimal-pro": ["#ffffff","#111111","#777777","Welcome back","Email address","••••••••"],
     neon: ["#07090d","#53f6c7","#26313d","Access terminal","EMAIL","••••••••"],
     "split-modern": ["#111111","#343434","#777777","Sign in","Email","••••••••"]
-  }[type] || ["#10131c","#8c63ff","#ff70b7","Sign in","Email","Password"];
+  }[type] || palette || ["#10131c","#8c63ff","#ff70b7","Sign in","Email","Password"];
 
   return '<div class="phone" style="--bg:'+data[0]+';--accent:'+data[1]+';--accent2:'+data[2]+'">'+
     '<div class="phone-top"></div><div class="mini-icon">✦</div>'+
@@ -32,7 +32,7 @@ function previewMarkup(type) {
 
 function renderCard(product) {
   return '<article class="card">'+
-    '<a class="preview" href="producto.html?style='+encodeURIComponent(product.slug)+'">'+previewMarkup(product.preview)+'</a>'+
+    '<a class="preview" href="producto.html?style='+encodeURIComponent(product.slug)+'">'+previewMarkup(product.preview, product.palette)+'</a>'+
     '<div class="card-body"><div class="meta"><span>'+escapeHtml(product.category)+'</span><b>'+escapeHtml(product.price)+'</b></div>'+
     '<h3>'+escapeHtml(product.title)+'</h3><p>'+escapeHtml(product.description)+'</p>'+
     '<div class="tags">'+product.features.slice(0,3).map(f=>'<span>'+escapeHtml(f)+'</span>').join("")+'</div>'+
@@ -65,7 +65,7 @@ function renderProduct() {
 
   root.innerHTML =
     '<section class="product-hero">'+
-      '<div class="product-preview">'+previewMarkup(p.preview)+'</div>'+
+      '<div class="product-preview">'+previewMarkup(p.preview, p.palette)+'</div>'+
       '<div class="product-copy"><div class="eyebrow">'+escapeHtml(p.category)+'</div>'+
       '<h1>'+escapeHtml(p.title)+'</h1><p class="lead">'+escapeHtml(p.description)+'</p>'+
       '<div class="price">'+escapeHtml(p.price)+'</div>'+
