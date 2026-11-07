@@ -170,7 +170,17 @@ function renderProduct() {
       '<p class="note">Vista conceptual de la interfaz basada en la identidad visual de esta plantilla. No es una captura del render Flutter. La compra y descarga aún no están habilitadas; la autenticación real requiere integración.</p></div>' +
     '</section>' +
     '<section class="product-info"><div><div class="eyebrow">INCLUYE</div><h2>Características</h2></div>' +
-    '<div class="feature-list">' + p.features.map(f=>'<div>✓ <span>' + escapeHtml(f) + '</span></div>').join("") + '</div></section>';
+    '<div class="feature-list">' + p.features.map(f=>'<div>✓ <span>' + escapeHtml(f) + '</span></div>').join("") + '</div></section>' +
+    '<button class="product-nav product-nav--prev" type="button" aria-label="Diseño anterior" title="Diseño anterior">‹</button>' +
+    '<button class="product-nav product-nav--next" type="button" aria-label="Siguiente diseño" title="Siguiente diseño">›</button>';
+
+  const currentIndex = Math.max(0, CATALOG.findIndex(item => item.slug === p.slug));
+  const navigate = offset => {
+    const nextIndex = (currentIndex + offset + CATALOG.length) % CATALOG.length;
+    location.href = 'producto.html?style=' + encodeURIComponent(CATALOG[nextIndex].slug);
+  };
+  root.querySelector(".product-nav--prev").addEventListener("click", () => navigate(-1));
+  root.querySelector(".product-nav--next").addEventListener("click", () => navigate(1));
 }
 
 renderCatalog();
