@@ -36,13 +36,6 @@ function getPreviewData(type, palette, productTitle, slug, category) {
   if (preset) return { bg:preset[0], accent:preset[1], accent2:preset[2], heading:preset[3], email:preset[4], password:preset[5], variant };
 
   const colors = Array.isArray(palette) ? palette : [];
-  let variant = "editorial";
-  if (category === "Glass") variant = "glass";
-  else if (category === "Futuristic") variant = "neon";
-  else if (category === "Business" || category === "Minimal") variant = "minimal";
-  else if (category === "Gradient") variant = "split";
-  else if (category === "Soft") variant = "editorial";
-  else variant = ["glass","split","minimal","editorial","neon"][hashText(slug) % 5];
 
   return {
     bg: safeColor(colors[0], "#111522"),
