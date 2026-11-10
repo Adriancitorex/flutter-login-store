@@ -1,6 +1,13 @@
 name: Validate LoginForge catalog
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - 'assets/catalog.js'
+      - 'assets/preview.js'
+      - 'assets/site.css'
+      - '.github/workflows/validate-catalog.yml'
   pull_request:
     paths:
       - 'assets/catalog.js'
