@@ -12,8 +12,8 @@ const expected = 101;
 
 function readStringField(field) {
   const patterns = [
-    new RegExp('\\\\b' + field + ':\\\\s*"([^"]+)"', 'g'),
-    new RegExp('"' + field + '":\\\\s*"([^"]+)"', 'g')
+    new RegExp('\\b' + field + ':\\s*"([^"]+)"', 'g'),
+    new RegExp('"' + field + '":\\s*"([^"]+)"', 'g')
   ];
   return patterns.flatMap(pattern => [...catalog.matchAll(pattern)].map(match => match[1]));
 }
@@ -44,10 +44,10 @@ if (/Motivo gráfico propio|Sistema tipográfico distintivo|Composición exclusi
   errors.push('hay metadatos genéricos pendientes de definir');
 }
 
-const layoutBlock = preview.match(/const layouts = \\[([\\s\\S]*?)\\n  \\];/);
+const layoutBlock = preview.match(/const layouts = \[([\s\S]*?)\n  \];/);
 const layoutCount = layoutBlock ? (layoutBlock[1].match(/'<div class="layout-/g) || []).length : 0;
 if (layoutCount !== 22) errors.push('el catálogo de vistas previas debe tener 22 composiciones; detectadas: ' + layoutCount);
-const cssLayouts = [...new Set([...css.matchAll(/\\.phone--layout-(\\d+)/g)].map(match => Number(match[1])))];
+const cssLayouts = [...new Set([...css.matchAll(/\.phone--layout-(\d+)/g)].map(match => Number(match[1])))];
 for (let i = 0; i < layoutCount; i++) {
   if (!cssLayouts.includes(i)) errors.push('falta el sistema visual CSS layout-' + i);
 }
@@ -64,10 +64,10 @@ for (const token of motifTokens) {
 }
 
 const navigationChecks = [
-  ['enlace de ficha desde el catálogo', /producto\\.html\\?style=/],
-  ['búsqueda de producto por slug', /productBySlug\\(slug\\)/],
-  ['navegación anterior y siguiente', /product-nav--prev[\\s\\S]*product-nav--next/],
-  ['cambio de producto', /location\\.href = 'producto\\.html\\?style='/],
+  ['enlace de ficha desde el catálogo', /producto\.html\?style=/],
+  ['búsqueda de producto por slug', /productBySlug\(slug\)/],
+  ['navegación anterior y siguiente', /product-nav--prev[\s\S]*product-nav--next/],
+  ['cambio de producto', /location\.href = 'producto\.html\?style='/],
   ['aviso de vista conceptual', /Vista conceptual de la interfaz/],
   ['aviso de que no es captura Flutter', /No es una captura del render Flutter/]
 ];
