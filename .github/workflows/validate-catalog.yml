@@ -7,11 +7,13 @@ on:
       - 'assets/catalog.js'
       - 'assets/preview.js'
       - 'assets/site.css'
+      - 'scripts/validate-catalog.js'
       - '.github/workflows/validate-catalog.yml'
   pull_request:
     paths:
       - 'assets/catalog.js'
       - 'assets/preview.js'
+      - 'scripts/validate-catalog.js'
       - '.github/workflows/validate-catalog.yml'
   workflow_dispatch:
 
@@ -30,3 +32,4 @@ jobs:
         run: |
           node --check assets/catalog.js
           node --check assets/preview.js
+          node scripts/validate-catalog.js
