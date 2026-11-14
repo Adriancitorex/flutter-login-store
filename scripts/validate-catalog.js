@@ -24,6 +24,7 @@ function checkUnique(name, values) {
 }
 
 const slugs = readStringField('slug');
+const titles = readStringField('title');
 const files = readStringField('file');
 const compositions = readStringField('composition');
 const motifs = readStringField('signatureMotif');
@@ -31,8 +32,12 @@ const typography = readStringField('typography');
 const artDirections = readStringField('artDirection');
 
 checkUnique('slugs', slugs);
+checkUnique('títulos', titles);
 checkUnique('archivos', files);
 checkUnique('direcciones de arte', artDirections);
+if (new Set(compositions).size !== 22) errors.push('composiciones: se esperaban 22 sistemas visuales distintos');
+if (new Set(motifs).size !== 23) errors.push('motivos: se esperaban 23 familias visuales distintas');
+if (new Set(typography).size !== 22) errors.push('tipografías: se esperaban 22 sistemas tipográficos distintos');
 for (const [name, values] of [
   ['composiciones', compositions],
   ['motivos', motifs],
@@ -61,6 +66,16 @@ for (const token of motifTokens) {
   if (!preview.includes('motif.includes("' + token + '")')) {
     errors.push('la vista previa no reconoce el motivo ' + token);
   }
+}
+
+const motifSlugs = new Set([
+  'pastel', 'aurora-glass', 'corporate', 'vibrant', 'cyberpunk', 'liquid-glass',
+  'dark-glass', 'fintech', 'gradient-flow', 'minimal-pro', 'neon', 'split-modern'
+]);
+for (let i = 0; i < expected; i++) {
+  const motif = String(motifs[i] || '').toLocaleLowerCase('es');
+  const hasDedicatedMotif = motifSlugs.has(slugs[i]) || motifTokens.some(token => motif.includes(token));
+  if (!hasDedicatedMotif) errors.push('la ficha ' + slugs[i] + ' no tiene un motivo ilustrado específico');
 }
 
 const navigationChecks = [
